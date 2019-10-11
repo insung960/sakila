@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>sakila index</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		position: relative;
+		overflow-y: auto;
+	}
+	
+	#aside {
+		width: 200px;
+		height: 3000px;
+		position: fixed;
+		background: orange;
+		overflow: hidden;
+		float: left;
+	}
+	
+	#section {
+		margin-left: 300px;
+		margin-right: 100px;
+		margin-bottom: 100px;
+		background: white;
+	}
+</style>
+</head>
+<body>
+	<div id="aside">
+		
+	</div>
+	
+	<div id="section">
+		<h1>ADDRESS</h1>
+		
+		<h2>address list</h2>
+		
+			<table border = "1">
+				<thead>
+					<tr>
+						<th>addressId</th>
+						<th>address</th>
+						<th>district</th>
+						<th>cityId</th>
+						<th>postalCode</th>
+					</tr>
+				</thead>
+				<tbody id="list">
+				
+				</tbody>
+			</table>
+	</div>
+
+	
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$("#aside").load("/sakila/aside.html");
+</script>
+<script>
+$("#list").empty();
+
+$.ajax({
+	url : "/sakila/SelectAddressListServlet",
+	method : "POST",
+	success : function(json) { // json 파일 -> 자바스크립트 객체변경
+		console.log(json);
+	
+			$(json).each(function(index,item){
+				let list = "<tr><td>";
+				list+= 	item.addressId;
+				list+=	"</td><td>";
+				list+=	item.address;
+				list+=	"</td><td>";
+				list+=	item.district;
+				list+=	"</td><td>";
+				list+=	item.city.cityId;
+				list+=	"</td><td>";
+				list+=	item.postalCode;
+				list+=	"</td></tr>";
+				$("#list").append(list);
+			})
+				
+				/* for(let i=0; i<json.length; i+=1) {
+					let html = "<tr><td>"+json[i].addressId+"</td><td>"+json[i].address+"</td><td>" +json[i].district+"</td><td>" +json[i].city.cityId+"</td><td>"+json[i].postalCode+"</td></tr>";
+					$("#list").append(html);
+				} */
+			}
+	})
+</script>
+</html>
