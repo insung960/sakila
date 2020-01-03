@@ -46,20 +46,23 @@
 		
 		<h2>address list</h2>
 		
-			<table border = "1">
-				<thead>
-					<tr>
-						<th>addressId</th>
-						<th>address</th>
-						<th>district</th>
-						<th>cityId</th>
-						<th>postalCode</th>
-					</tr>
-				</thead>
-				<tbody id="list">
-				
-				</tbody>
-			</table>
+		<table border = "1">
+			<thead>
+				<tr>
+					<th>addressId</th>
+					<th>address</th>
+					<th>district</th>
+					<th>cityId</th>
+					<th>postalCode</th>
+				</tr>
+			</thead>
+			<tbody id="list">
+			
+			</tbody>
+		</table>
+		
+		<button type="button" id="preBtn">이전</button>
+		<button type="button" id="nextBtn">다음</button>
 	</div>
 
 	
@@ -69,11 +72,15 @@
 $("#aside").load("/sakila/aside.html");
 </script>
 <script>
+
+let currentPage =1;
+
 $("#list").empty();
 
 $.ajax({
 	url : "/sakila/SelectAddressListServlet",
 	method : "POST",
+	data : {"currentPage" : currentPage},
 	success : function(json) { // json 파일 -> 자바스크립트 객체변경
 		console.log(json);
 	
@@ -90,13 +97,8 @@ $.ajax({
 				list+=	item.postalCode;
 				list+=	"</td></tr>";
 				$("#list").append(list);
-			})
-				
-				/* for(let i=0; i<json.length; i+=1) {
-					let html = "<tr><td>"+json[i].addressId+"</td><td>"+json[i].address+"</td><td>" +json[i].district+"</td><td>" +json[i].city.cityId+"</td><td>"+json[i].postalCode+"</td></tr>";
-					$("#list").append(html);
-				} */
-			}
+			})	
+		}
 	})
 </script>
 </html>

@@ -26,6 +26,9 @@ public class SelectAddressListServlet extends HttpServlet
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		request.getParameter("currentPage");
+		System.out.println("---어드레스서블릿-");
+		
 		response.setContentType("application/json;charset=UTF-8");
 		
 		addressService = new AddressService();
