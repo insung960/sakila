@@ -14,22 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import sakila.address.model.ActorDao;
-import sakila.address.model.AddressDao;
-import sakila.address.model.CategoryDao;
-import sakila.address.model.CityDao;
-import sakila.address.model.CountryDao;
-import sakila.address.model.CustomerDao;
-import sakila.address.model.FilmDao;
-import sakila.address.model.Film_actorDao;
-import sakila.address.model.Film_categoryDao;
-import sakila.address.model.Film_textDao;
-import sakila.address.model.InventoryDao;
-import sakila.address.model.LanguageDao;
-import sakila.address.model.PaymentDao;
-import sakila.address.model.RentalDao;
-import sakila.address.model.StaffDao;
-import sakila.address.model.StoreDao;
+import sakila.model.ActorDao;
+import sakila.model.AddressDao;
+import sakila.model.CategoryDao;
+import sakila.model.CityDao;
+import sakila.model.CountryDao;
+import sakila.model.CustomerDao;
+import sakila.model.FilmDao;
+import sakila.model.Film_actorDao;
+import sakila.model.Film_categoryDao;
+import sakila.model.Film_textDao;
+import sakila.model.InventoryDao;
+import sakila.model.LanguageDao;
+import sakila.model.PaymentDao;
+import sakila.model.RentalDao;
+import sakila.model.StaffDao;
+import sakila.model.StoreDao;
 
 /**
  * Servlet implementation class indexController
