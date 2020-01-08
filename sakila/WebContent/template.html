@@ -63,9 +63,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">추가:</h6>
-            <a class="collapse-item" href="">국가 추가</a>
-            <a class="collapse-item" href="">도시 추가</a>
-            <a class="collapse-item" href="">주소 추가</a>
+            <a class="collapse-item" href="addCountry.html">국가 추가</a>
+            <a class="collapse-item" href="addCity.html">도시 추가</a>
           </div>
         </div>
       </li>
@@ -79,9 +78,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">목록</h6>
-            <a class="collapse-item" href="">국가 목록</a>
-            <a class="collapse-item" href="">도시 목록</a>
-            <a class="collapse-item" href="">주소 목록</a>
+            <a class="collapse-item" href="countryList.html">국가 목록</a>
+            <a class="collapse-item" href="cityList.html">도시 목록</a>
+            <a class="collapse-item" href="addressList.html">주소 목록</a>
           </div>
         </div>
       </li>
@@ -103,7 +102,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">회원 관리</h6>
-            <a class="collapse-item" href="">회원 목록</a>
+            <a class="collapse-item" href="customerList.html">회원 목록</a>
             <a class="collapse-item" href="addCustomer.html">회원추가</a>
           </div>
         </div>
@@ -132,19 +131,17 @@
 
       <!-- Main Content -->
       <div id="content">
-
-           
-        
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+		</div>
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         </div>
 
+		메인 내용
          
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -158,33 +155,13 @@
 
     </div>
     <!-- End of Content Wrapper -->
-
-  </div>
+	</div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -202,41 +179,11 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
 
-<script>
-$("#aside").load("/sakila/aside.html");
-</script>
-<script>
-	//aside.html include
-	$("#aside").load("/sakila/aside.html");
-	
-	$.ajax({
-		url :"/sakila/indexController",
-		method : "POST",
-		success : function(json){
-			console.log(json);
-			$("#countryRow").text(json.countryRow);	//	.text(), val() . html()
-			$("#cityRow").text(json.cityRow);
-			$("#storeRow").text(json.storeRow);
-			$("#staffRow").text(json.staffRow);
-			$("#rentalRow").text(json.rentalRow);
-			$("#paymentRow").text(json.paymentRow);
-			$("#languageRow").text(json.languageRow);
-			$("#inventoryRow").text(json.inventoryRow);
-			$("#filmRow").text(json.filmRow);
-			$("#film_textRow").text(json.film_textRow);
-			$("#film_categoryRow").text(json.film_categoryRow);
-			$("#film_actorRow").text(json.film_actorRow);
-			$("#customerRow").text(json.customerRow);
-			$("#categoryRow").text(json.categoryRow);
-			$("#addressRow").text(json.addressRow);
-			$("#actorRow").text(json.actorRow);
-		}
-	})
 </script>
 
 </html>

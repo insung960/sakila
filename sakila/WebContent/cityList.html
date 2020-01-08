@@ -17,21 +17,9 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
-<style>
-  	.selectBox {
-	   height: 500px;
-	   width: 300px;
-	   font-size:13px;
-	};
-	.divwd {
-		width:50px;
-	};
-	.ct {
-	  margin:auto;
-	}
-  </style>
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -60,7 +48,7 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-	
+
       <!-- Heading -->
       <div class="sidebar-heading">
       	국가,도시,주소
@@ -114,7 +102,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">회원 관리</h6>
-            <a class="collapse-item" href="">회원 목록</a>
+            <a class="collapse-item" href="customerList.html">회원 목록</a>
             <a class="collapse-item" href="addCustomer.html">회원추가</a>
           </div>
         </div>
@@ -143,92 +131,47 @@
 
       <!-- Main Content -->
       <div id="content">
-		<div id="section">
-		<div class="container-fluid">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Customer</h1>
-          </div>
-
-          <div class="row">
-
-            <div class="col-lg-6">
-
-              <!-- Basic Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">국가 목록</h6>
-                </div>
-                <div class="card-body">
-                	<table>
-                		<tr>
-                			<td>
-								<select size="10" id ="countryList" class = "selectBox"></select>
-							</td>
-							<td width="200"></td>
-							<td>
-								<select size="10" id ="cityList" class = "selectBox"></select>
-							</td>
-                		</tr>
-                	</table>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-
-              <!-- Basic Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">상세 주소</h6>
-                </div>
-                <div class="card-body">
-                	<fieldset>
-						<legend>주소정보</legend>
-							<table>
-								<tr><td class="divwd">cityId :</td><td><input type="text" id="cityId" readonly="readonly"></td></tr>
-								<tr><td>address :</td><td><input type="text" id="address"></td></tr>
-								<tr><td>address2 :</td><td><input type="text" id="address2"></td></tr>
-								<tr><td>district :</td><td><input type="text" id="district" ></td></tr>
-								<tr><td>postalcode :</td><td><input type="text" id="postalcode"></td></tr>
-								<tr><td>phone :</td><td><input type="text" id="phone"></td></tr>
-							</table>
-					</fieldset>
-                </div>
-              </div>
-
-              <!-- Basic Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">고객 정보</h6>
-                </div>
-                <div class="card-body">
-					<fieldset>
-						<legend>고객정보</legend>
-							<table>
-								<tr class="divwd"><td>storeId : </td><td><input type="text" id="storeid"></td></tr>
-								<tr><td>FirstName : </td><td><input type="text" id="firstname"></td></tr>
-								<tr><td>LastName : </td><td><input type="text" id="lastname"></td></tr>
-								<tr><td>E-Mail : </td><td><input type="text" id="email"></td></tr>
-							</table>
-					</fieldset>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="ct">
-          	<button type="button" id="add" class="btn btn-primary">주소 입력</button>
-          </div>
-        </div>
-		
-	</div>  
-        
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
+      <div id="section">
         <div class="container-fluid">
+        
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">    City List</h1>
+        </div>
 
+		<div class="row">
+
+            <div class="col-lg-12">
+
+              <!-- Basic Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">국가 설정</h6>
+                </div>
+                <div class="card-body">
+                	<div>
+						<table class= "table">
+							<thead>
+								<tr>
+									<th>city_id</th>
+									<th>city</th>
+									<th>country_id</th>
+									<th>country</th>
+									<th>last_update</th>
+								</tr>
+							</thead>
+							<tbody id="list">
+							
+							</tbody>
+						</table>
+					</div>
+					<button type="button" id="preBtn">이전</button>
+					<button type="button" id="nextBtn">다음</button>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -238,37 +181,16 @@
         </div>
       </footer>
       <!-- End of Footer -->
-
+	</div></div>
     </div>
-    </div></div>
     <!-- End of Content Wrapper -->
-
-  </div>
+	</div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -286,77 +208,85 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-$("#aside").load("/sakila/aside.html");
-
-$.ajax({
-	url:"/sakila/selectCountryAllList",
-	method:"POST",
-	success:function(json){
-		console.log(json);
-		$("#countryList").empty();
-		$(json).each(function(index,item){
-			temp="<option value='";
-			temp+=item.countryId;
-			temp+="'>";
-			temp+=item.country;
-			temp+="</option>";
-			$("#countryList").append(temp);
-		});
-	}
-});
-
-$("#countryList").change(function(){
+	let currentPage =1;
+	
 	$.ajax({
-		url:"/sakila/SelectCityListByCountryServlet",
-		method:"POST",
-		data:{"countryId":$("#countryList").val()},
-		success:function(json){
+		url : "/sakila/address/SelectCityList",
+		method : "POST",
+		data : {"currentPage" : currentPage},
+		success : function(json) { // json 파일  -> 자바스크립트 객체변경
 			console.log(json);
-			$("#cityList").empty();
-			$(json).each(function(index,item){
-				temp="<option value='";
-				temp+=item.cityId;
-				temp+="'>";
-				temp+=item.city;
-				temp+="</option>";
-				$("#cityList").append(temp);
-			});
+			for(let i=0; i<json.length; i+=1) {
+				let html = "<tr><td>"+json[i].cityId+"</td><td>"+json[i].city+"</td><td>" +json[i].country.countryId+"</td><td>" +json[i].country.country+"</td><td>" +json[i].lastUpdate+"</td></tr>";
+				$("#list").append(html);
+			}
 		}
-	});
-})
-
-$("#cityList").change(function(){
-	$("#cityId").val($("#cityList").val());
-});
-
-
-$("#add").click(function(){
+	})
 	
-	console.log("#addCountry click!");
-	console.log("cityId : ", $("#cityId").val());
-	console.log("address : ", $("#address").val());
-	console.log("address2 : ", $("#address2").val());
-	console.log("district : ", $("#district").val());
-	console.log("postalcode : ", $("#postalcode").val());
-	console.log("phone : ", $("#phone").val());
-	
-	console.log("storeid : ", $("#storeid").val());
-	console.log("firstname : ", $("#firstname").val());
-	console.log("lastname : ", $("#lastname").val());
-	console.log("email : ", $("#email").val());
-	
-	$.ajax({
-		url:"/sakila/InsertCustomer",
-		method:"POST",
-		data:{"cityId":$("#cityId").val(),"address":$("#address").val(),"address2":$("#address2").val(),"district":$("#district").val(),"postalcode":$("#postalcode").val(),"phone":$("#phone").val(),"storeid":$("#storeid").val(),"firstname":$("#firstname").val(),"lastname":$("#lastname").val(),"email":$("#email").val()},
-		success: alert("입력 성공")
-	});	
-})
+	//이전 버튼
+	$("#preBtn").click(function(){
+		if(currentPage === 1)
+			{
+				alert("현재 1페이지 입니다");
+				return;
+			}
+		currentPage -= 1;
+		console.log(currentPage);
+		$("#list").empty();
+		$.ajax({
+			url : "/sakila/address/SelectCityList",
+			method : "POST",
+			data : {"currentPage" : currentPage},
+			success : function(json) { // json 파일 -> 자바스크립트 객체변경
+				console.log(json);
+				for(let i=0; i<json.length; i+=1) {
+					let html = "<tr><td>"+json[i].cityId+"</td><td>"+json[i].city+"</td><td>" +json[i].country.countryId+"</td><td>" +json[i].country.country+"</td><td>" +json[i].lastUpdate+"</td></tr>";
+					$("#list").append(html);
+				}
+			}
+		})
+	})
+	//다음 버튼
+	$("#nextBtn").click(function(){
+			// db에서 전체 데이터 사이즈를 가지고 온다.
+			let count = 0;
+			$.ajax({
+				url : "/sakila/adrees/selectCityCount",
+				method : "POST",
+				async : false, // 비동기방식을 동기방식으로 바꾸는 함수
+				success : function(json) {
+					console.log(json);
+					count = Number(json);
+				}
+			});
+			// 사이즈로 현재 페이지가 마지막 페이지인지 확인 한다.
+			let lastPage = Math.ceil(count/10);
+			if(currentPage === lastPage) {
+				alert("현재 마지막 페이지 입니다.");
+				return;
+			}
+			
+			currentPage += 1;
+			console.log(currentPage);
+			// 리스트 출력
+			$("#list").empty();
+			$.ajax({
+				url : "/sakila/address/SelectCityList",
+				method : "POST",
+				data : {"currentPage" : currentPage}, // daa : {이름 : 변수}
+				success : function(json) { // json 파일 -> 자바스크립트 객체변경
+					console.log(json);
+					for(let i=0; i<json.length; i+=1) {
+						let html = "<tr><td>"+json[i].cityId+"</td><td>"+json[i].city+"</td><td>" +json[i].country.countryId+"</td><td>" +json[i].country.country+"</td><td>" +json[i].lastUpdate+"</td></tr>";
+						$("#list").append(html);
+					}
+				}
+			})
+		});
 </script>
 
 </html>

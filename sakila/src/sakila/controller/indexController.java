@@ -1,9 +1,7 @@
 package sakila.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -14,22 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import sakila.model.ActorDao;
-import sakila.model.AddressDao;
-import sakila.model.CategoryDao;
-import sakila.model.CityDao;
-import sakila.model.CountryDao;
-import sakila.model.CustomerDao;
-import sakila.model.FilmDao;
-import sakila.model.Film_actorDao;
-import sakila.model.Film_categoryDao;
-import sakila.model.Film_textDao;
-import sakila.model.InventoryDao;
-import sakila.model.LanguageDao;
-import sakila.model.PaymentDao;
-import sakila.model.RentalDao;
-import sakila.model.StaffDao;
-import sakila.model.StoreDao;
+import sakila.model.dao.ActorDao;
+import sakila.model.dao.AddressDao;
+import sakila.model.dao.CategoryDao;
+import sakila.model.dao.CityDao;
+import sakila.model.dao.CountryDao;
+import sakila.model.dao.CustomerDao;
+import sakila.model.dao.FilmDao;
+import sakila.model.dao.Film_actorDao;
+import sakila.model.dao.Film_categoryDao;
+import sakila.model.dao.Film_textDao;
+import sakila.model.dao.InventoryDao;
+import sakila.model.dao.LanguageDao;
+import sakila.model.dao.PaymentDao;
+import sakila.model.dao.RentalDao;
+import sakila.model.dao.StaffDao;
+import sakila.model.dao.StoreDao;
 
 /**
  * Servlet implementation class indexController
@@ -39,20 +37,20 @@ public class indexController extends HttpServlet
 {
 	private CountryDao countryDao;
 	private CityDao cityDao;
-	private	StoreDao storeDao;
-	private StaffDao staffDao;
-	private	RentalDao rentalDao;
-	private	PaymentDao paymentDao;
-	private	LanguageDao languageDao;
-	private	InventoryDao inventoryDao;
-	private FilmDao filmDao;
-	private	Film_textDao film_textDao;
-	private Film_categoryDao film_categoryDao;
-	private	Film_actorDao film_actorDao;
-	private	CustomerDao customerDao;
-	private	CategoryDao categoryDao;
-	private	AddressDao addressDao;
-	private	ActorDao actorDao;
+	private	sakila.model.dao.StoreDao storeDao;
+	private sakila.model.dao.StaffDao staffDao;
+	private	sakila.model.dao.RentalDao rentalDao;
+	private	sakila.model.dao.PaymentDao paymentDao;
+	private	sakila.model.dao.LanguageDao languageDao;
+	private	sakila.model.dao.InventoryDao inventoryDao;
+	private sakila.model.dao.FilmDao filmDao;
+	private	sakila.model.dao.Film_textDao film_textDao;
+	private sakila.model.dao.Film_categoryDao film_categoryDao;
+	private	sakila.model.dao.Film_actorDao film_actorDao;
+	private	sakila.model.dao.CustomerDao customerDao;
+	private	sakila.model.dao.CategoryDao categoryDao;
+	private	sakila.model.dao.AddressDao addressDao;
+	private	sakila.model.dao.ActorDao actorDao;
 	
 	//모든 테이블 Dao추가
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
